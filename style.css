@@ -4,13 +4,14 @@
   --muted: #6b6862;
   --line: #e4e1da;
   --accent: #b5523b;
-  --gutter: 40px;
-  --wall-gap: 22vh;
+  --gutter: 48px;
+  --row: 340px;   /* target row height of the gallery */
+  --gap: 14px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
@@ -27,6 +28,7 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 
 /* Top bar */
+.site-header { display: contents; }
 .bar {
   position: sticky;
   top: 0;
@@ -35,192 +37,50 @@ a { color: inherit; }
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  padding: 18px var(--gutter);
-  background: rgba(250, 249, 246, 0.86);
+  padding: 16px var(--gutter);
+  background: rgba(250, 249, 246, 0.88);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   font-size: 0.85rem;
 }
-.mark {
-  font-weight: 500;
-  text-decoration: none;
-  letter-spacing: -0.01em;
-}
-.header-links {
-  display: flex;
-  gap: 10px;
-  color: var(--muted);
-}
-.header-links a { text-decoration: none; color: var(--text); }
+.mark { font-weight: 500; text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
+.header-links { display: flex; gap: 10px; color: var(--muted); }
+.header-links a { text-decoration: none; color: var(--text); white-space: nowrap; }
 .header-links a:hover, .header-links a:focus-visible, .mark:hover { color: var(--accent); }
 
-/* The site header is not sticky as a whole; only the bar is. */
-.site-header { display: contents; }
-
-/* Intro */
+/* Intro: who, what, and how to reach me, all in the first screen */
 .intro {
-  min-height: 72vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 var(--gutter) 8vh;
   max-width: 1100px;
+  padding: 56px var(--gutter) 72px;
+}
+.eyebrow {
+  margin: 0 0 18px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 .name {
   margin: 0;
-  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  font-size: clamp(2.6rem, 6vw, 4.75rem);
   font-weight: 300;
   letter-spacing: -0.035em;
   line-height: 1;
 }
 .tagline {
+  margin: 16px 0 0;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight: 400;
+}
+.about-text {
   margin: 20px 0 0;
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  max-width: 64ch;
   font-weight: 300;
   color: var(--muted);
+  line-height: 1.65;
 }
-.scroll-hint {
-  margin: 56px 0 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-/* Rooms: one per project */
-.room { padding: 0 var(--gutter); }
-.room-head {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 16vh 0 var(--wall-gap);
-  text-align: center;
-}
-.room:first-child .room-head { padding-top: 6vh; padding-bottom: 14vh; }
-.room-no {
-  margin: 0 0 18px;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.room-head h2 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.6vw, 2.75rem);
-  font-weight: 300;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-}
-.context {
-  margin: 18px auto 0;
-  font-weight: 300;
-  color: var(--muted);
-  max-width: 52ch;
-}
-
-/* The walk: each piece hangs on its own stretch of wall */
-.walk {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--wall-gap);
-}
-/* Size each piece from its aspect ratio (--r) so the whole thing fits on screen,
-   never wider than its own pixels (--w), even before a lazy image has loaded. */
-.piece {
-  margin: 0;
-  width: min(100%, 1500px, var(--w), calc((100vh - 190px) * var(--r)));
-}
-.frame {
-  display: block;
-  cursor: zoom-in;
-}
-.piece img {
-  width: 100%;
-  box-shadow:
-    0 1px 2px rgba(28, 27, 25, 0.06),
-    0 18px 50px -18px rgba(28, 27, 25, 0.28);
-  transition: box-shadow .35s ease, transform .35s ease;
-}
-.frame:hover img {
-  transform: translateY(-3px);
-  box-shadow:
-    0 1px 2px rgba(28, 27, 25, 0.06),
-    0 28px 64px -18px rgba(28, 27, 25, 0.34);
-}
-.frame:focus-visible { outline: 2px solid var(--accent); outline-offset: 8px; }
-
-/* Museum-style wall label, never wider than its piece */
-.label {
-  width: 0;
-  min-width: 100%;
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 14px;
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-.label .no {
-  grid-row: span 2;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  padding-top: 2px;
-}
-.label strong { font-weight: 500; }
-.label .cap {
-  font-weight: 300;
-  color: var(--muted);
-  max-width: 60ch;
-}
-
-.boards {
-  margin: 12vh 0 0;
-  text-align: center;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
-}
-.boards a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-}
-.boards a::after { content: " →"; }
-.boards a:hover { opacity: .75; }
-
-/* Pieces fade up as you reach them (only when JS is running) */
-.js .piece {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1);
-}
-.js .piece.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .js .piece { opacity: 1; transform: none; transition: none; }
-  .piece img, .frame:hover img { transition: none; transform: none; }
-}
-
-/* About */
-.about {
-  max-width: 760px;
-  margin: 26vh auto 0;
-  padding: 64px var(--gutter) 72px;
-  border-top: 1px solid var(--line);
-}
-.about h2 {
-  margin: 0;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.about p { margin: 18px 0 0; font-size: 1.1rem; font-weight: 300; line-height: 1.65; }
-.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .btn {
   display: inline-block;
   padding: 10px 22px;
@@ -233,7 +93,137 @@ a { color: inherit; }
 .btn:hover, .btn:focus-visible { background: var(--text); color: var(--bg); }
 .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn-primary:hover, .btn-primary:focus-visible { background: #9a4330; border-color: #9a4330; color: #fff; }
-.about .small { margin-top: 56px; font-size: 0.8rem; color: var(--muted); }
+
+/* Projects */
+.room { padding: 0 var(--gutter); margin-bottom: 96px; }
+.room-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  column-gap: 20px;
+  padding-top: 28px;
+  margin-bottom: 24px;
+  border-top: 1px solid var(--line);
+}
+.room-no {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  min-width: 2.2em;
+}
+.room-head h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.context {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 70ch;
+}
+.boards {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  white-space: nowrap;
+}
+.boards::after { content: " →"; }
+.boards:hover { opacity: .75; }
+
+/* Justified gallery: every tile in a row shares one height, widths follow each
+   image's ratio (--r), so nothing is cropped and rows run edge to edge. */
+.walk {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.walk::after {
+  /* Soaks up spare space so a short last row keeps the normal height. */
+  content: "";
+  flex: 999 1 0;
+}
+.piece {
+  position: relative;
+  margin: 0;
+  flex: var(--r) 1 calc(var(--r) * var(--row));
+  min-width: 0;
+}
+/* Once script.js has planned the rows, each piece gets an exact width. */
+.walk.justified .piece { flex: none; }
+.walk.justified::after { display: none; }
+.frame {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: #efede8;
+  box-shadow: 0 1px 2px rgba(28, 27, 25, 0.06), 0 10px 28px -14px rgba(28, 27, 25, 0.25);
+}
+.piece img {
+  width: 100%;
+  aspect-ratio: var(--r);
+  object-fit: cover;
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+.frame:hover img { transform: scale(1.025); }
+.frame:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* Title slides up over the image on hover; the full caption lives in the viewer. */
+.label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 14px 12px;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  color: #fff;
+  font-size: 0.85rem;
+  background: linear-gradient(to top, rgba(20, 19, 17, .72), rgba(20, 19, 17, 0));
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s, transform .25s;
+  pointer-events: none;
+}
+.piece:hover .label, .frame:focus-visible + .label { opacity: 1; transform: none; }
+.label .no { font-size: 0.72rem; letter-spacing: 0.08em; opacity: .75; }
+.label strong { font-weight: 500; }
+.label .cap { display: none; }
+
+/* Tiles fade up as they arrive (only when JS is running) */
+.js .piece {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+.js .piece.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .piece { opacity: 1; transform: none; transition: none; }
+  .piece img, .frame:hover img { transition: none; transform: none; }
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 28px var(--gutter) 40px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
 
 /* Lightbox */
 .lightbox {
@@ -294,16 +284,24 @@ a { color: inherit; }
 
 body.lb-open { overflow: hidden; }
 
+
+@media (max-width: 1000px) {
+  :root { --row: 240px; --gutter: 28px; }
+}
+
 @media (max-width: 759px) {
-  :root { --gutter: 16px; --wall-gap: 72px; }
-  .bar { padding: 14px var(--gutter); }
-  .intro { min-height: 62vh; padding-bottom: 4vh; }
-  .room-head { padding: 112px 0 64px; }
-  .room:first-child .room-head { padding: 24px 0 56px; }
-  .piece { width: min(100%, var(--w)); }
-  .label { margin-top: 14px; }
-  .boards { margin-top: 72px; }
-  .about { margin-top: 128px; padding-top: 48px; }
+  :root { --gutter: 16px; --row: 150px; --gap: 8px; }
+  .bar { padding: 12px var(--gutter); font-size: 0.78rem; justify-content: center; }
+  .mark { display: none; }
+  .header-links { gap: 6px; }
+  .intro { padding: 32px var(--gutter) 48px; }
+  .about-text { font-size: 0.95rem; }
+  .room { margin-bottom: 64px; }
+  .room-head { grid-template-columns: 1fr; row-gap: 10px; padding-top: 22px; margin-bottom: 18px; }
+  .room-head .boards { justify-self: start; }
+  /* No hover on touch: show a slim title strip instead. */
+  .label { opacity: 1; transform: none; padding: 18px 8px 6px; font-size: 0.72rem; }
+  .label .no { display: none; }
   .lb-figure { max-width: 100vw; padding: 0 8px; }
   .lb-prev, .lb-next { display: none; }
   .lb-caption { padding: 0 8px; }

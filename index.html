@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=7">
   <script>if ("IntersectionObserver" in window) document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -22,14 +22,17 @@
 <header class="site-header" id="top">
   <div class="bar">
     <a class="mark" href="#top">Taven Olsson</a>
-    <nav class="header-links" aria-label="Page sections">
-      <a href="#work">Work</a><span aria-hidden="true">·</span><a href="#about">About</a><span aria-hidden="true">·</span><a href="#contact">Contact</a>
-    </nav>
+    <nav class="header-links" aria-label="Projects"><a href="#courtyard">Courtyard</a><span aria-hidden="true">·</span><a href="#close-but-cut-apart">Close but Cut Apart</a><span aria-hidden="true">·</span><a href="#old-and-young">Old + Young</a></nav>
   </div>
-  <div class="intro">
+  <div class="intro" id="about">
+    <p class="eyebrow">Portfolio · 2026</p>
     <h1 class="name">Taven Olsson</h1>
     <p class="tagline">Designer and maker. Photo-collage, drawing, and image editing.</p>
-    <p class="scroll-hint" aria-hidden="true">Selected work, 2026 &darr;</p>
+    <p class="about-text">I&#x27;m a second-year architecture student at the University of Nicosia, Cyprus, with a hands-on background in composite fabrication, woodworking, and manufacturing. I work in Photoshop, InDesign, Illustrator, Affinity, Fusion 360, and AutoCAD, and prepare laser-cut and CNC files. Native English speaker. Available for remote contract work, 20–40 hours a week.</p>
+    <div class="buttons" id="contact">
+      <a class="btn btn-primary" href="mailto:olssontaven@gmail.com">olssontaven@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/taven-olsson-4582b1308/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
 </header>
 
@@ -37,111 +40,110 @@
 
   <section class="room" id="courtyard" aria-labelledby="courtyard-title">
     <header class="room-head">
-      <p class="room-no">Room I</p>
-      <h2 id="courtyard-title">Courtyard for Birds and People</h2>
-      <p class="context">Year 1 studio, spring 2026. Courtyard building on a Nicosia rooftop site. Photoshop collage, Fusion 360, hand-traced linework.</p>
+      <p class="room-no">I</p>
+      <div>
+        <h2 id="courtyard-title">Courtyard for Birds and People</h2>
+        <p class="context">Year 1 studio, spring 2026. Courtyard building on a Nicosia rooftop site. Photoshop collage, Fusion 360, hand-traced linework.</p>
+      </div>
+      <a class="boards" href="boards/bird-sanctuary-boards.pdf" target="_blank" rel="noopener">Full boards (PDF)</a>
     </header>
     <div class="walk">
-      <figure class="piece tall" style="--w:1532px; --r:0.8511">
-        <a class="frame" href="img/01-courtyard-section-render.jpg"><img src="img/01-courtyard-section-render.jpg" srcset="img/thumb/01-courtyard-section-render.jpg 510w, img/01-courtyard-section-render.jpg 1532w" sizes="(min-width: 760px) 80vh, 100vw" width="1532" height="1800" fetchpriority="high" alt="Section render. Fusion 360 base, textures, people and sky composited in Photoshop."></a>
+      <figure class="piece" style="--r:0.8511">
+        <a class="frame" href="img/01-courtyard-section-render.jpg"><img src="img/thumb/01-courtyard-section-render.jpg" srcset="img/thumb/01-courtyard-section-render.jpg 510w, img/01-courtyard-section-render.jpg 1532w" sizes="(min-width: 760px) 306px, 136px" width="1532" height="1800" fetchpriority="high" alt="Section render. Fusion 360 base, textures, people and sky composited in Photoshop."></a>
         <figcaption class="label"><span class="no">01</span><strong>Courtyard section</strong><span class="cap">Section render. Fusion 360 base, textures, people and sky composited in Photoshop.</span></figcaption>
       </figure>
-      <figure class="piece tall" style="--w:1532px; --r:0.8511">
-        <a class="frame" href="img/02-green-facade-section-collage.jpg"><img src="img/02-green-facade-section-collage.jpg" srcset="img/thumb/02-green-facade-section-collage.jpg 510w, img/02-green-facade-section-collage.jpg 1532w" sizes="(min-width: 760px) 80vh, 100vw" width="1532" height="1800"  alt="Section collage of the planted lattice, with layered vegetation and figures."></a>
+      <figure class="piece" style="--r:0.8511">
+        <a class="frame" href="img/02-green-facade-section-collage.jpg"><img src="img/thumb/02-green-facade-section-collage.jpg" srcset="img/thumb/02-green-facade-section-collage.jpg 510w, img/02-green-facade-section-collage.jpg 1532w" sizes="(min-width: 760px) 306px, 136px" width="1532" height="1800"  alt="Section collage of the planted lattice, with layered vegetation and figures."></a>
         <figcaption class="label"><span class="no">02</span><strong>Green lattice facade</strong><span class="cap">Section collage of the planted lattice, with layered vegetation and figures.</span></figcaption>
       </figure>
-      <figure class="piece wide" style="--w:1332px; --r:2.3492">
-        <a class="frame" href="img/03a-site-photocollage-columns.jpg"><img src="img/03a-site-photocollage-columns.jpg" srcset="img/thumb/03a-site-photocollage-columns.jpg 600w, img/03a-site-photocollage-columns.jpg 1332w" sizes="(min-width: 760px) 90vw, 100vw" width="1332" height="567"  alt="Photo-collage built from site photographs, with the sky replaced and the cut-out edges kept."></a>
+      <figure class="piece" style="--r:2.3492">
+        <a class="frame" href="img/03a-site-photocollage-columns.jpg"><img src="img/thumb/03a-site-photocollage-columns.jpg" srcset="img/thumb/03a-site-photocollage-columns.jpg 600w, img/03a-site-photocollage-columns.jpg 1332w" sizes="(min-width: 760px) 846px, 376px" width="1332" height="567"  alt="Photo-collage built from site photographs, with the sky replaced and the cut-out edges kept."></a>
         <figcaption class="label"><span class="no">03</span><strong>Site collage I</strong><span class="cap">Photo-collage built from site photographs, with the sky replaced and the cut-out edges kept.</span></figcaption>
       </figure>
-      <figure class="piece wide" style="--w:1295px; --r:1.8036">
-        <a class="frame" href="img/03b-site-photocollage-courtyard.jpg"><img src="img/03b-site-photocollage-courtyard.jpg" srcset="img/thumb/03b-site-photocollage-courtyard.jpg 600w, img/03b-site-photocollage-courtyard.jpg 1295w" sizes="(min-width: 760px) 90vw, 100vw" width="1295" height="718"  alt="Panoramic photo-collage of the existing courtyard."></a>
+      <figure class="piece" style="--r:1.8036">
+        <a class="frame" href="img/03b-site-photocollage-courtyard.jpg"><img src="img/thumb/03b-site-photocollage-courtyard.jpg" srcset="img/thumb/03b-site-photocollage-courtyard.jpg 600w, img/03b-site-photocollage-courtyard.jpg 1295w" sizes="(min-width: 760px) 649px, 289px" width="1295" height="718"  alt="Panoramic photo-collage of the existing courtyard."></a>
         <figcaption class="label"><span class="no">04</span><strong>Site collage II</strong><span class="cap">Panoramic photo-collage of the existing courtyard.</span></figcaption>
       </figure>
-      <figure class="piece wide" style="--w:1416px; --r:1.8318">
-        <a class="frame" href="img/04-perspective-section-drawing.jpg"><img src="img/04-perspective-section-drawing.jpg" srcset="img/thumb/04-perspective-section-drawing.jpg 600w, img/04-perspective-section-drawing.jpg 1416w" sizes="(min-width: 760px) 90vw, 100vw" width="1416" height="773"  alt="Line drawing through the full building, showing activity on each level."></a>
+      <figure class="piece" style="--r:1.8318">
+        <a class="frame" href="img/04-perspective-section-drawing.jpg"><img src="img/thumb/04-perspective-section-drawing.jpg" srcset="img/thumb/04-perspective-section-drawing.jpg 600w, img/04-perspective-section-drawing.jpg 1416w" sizes="(min-width: 760px) 659px, 293px" width="1416" height="773"  alt="Line drawing through the full building, showing activity on each level."></a>
         <figcaption class="label"><span class="no">05</span><strong>Perspective section</strong><span class="cap">Line drawing through the full building, showing activity on each level.</span></figcaption>
       </figure>
-      <figure class="piece wide" style="--w:1502px; --r:1.3141">
-        <a class="frame" href="img/05-axonometric-with-lattice.jpg"><img src="img/05-axonometric-with-lattice.jpg" srcset="img/thumb/05-axonometric-with-lattice.jpg 600w, img/05-axonometric-with-lattice.jpg 1502w" sizes="(min-width: 760px) 90vw, 100vw" width="1502" height="1143"  alt="Building axonometric with the modular lattice structure."></a>
+      <figure class="piece" style="--r:1.3141">
+        <a class="frame" href="img/05-axonometric-with-lattice.jpg"><img src="img/thumb/05-axonometric-with-lattice.jpg" srcset="img/thumb/05-axonometric-with-lattice.jpg 600w, img/05-axonometric-with-lattice.jpg 1502w" sizes="(min-width: 760px) 473px, 210px" width="1502" height="1143"  alt="Building axonometric with the modular lattice structure."></a>
         <figcaption class="label"><span class="no">06</span><strong>Axonometric</strong><span class="cap">Building axonometric with the modular lattice structure.</span></figcaption>
       </figure>
-      <figure class="piece tall" style="--w:1401px; --r:0.9074">
-        <a class="frame" href="img/06-exploded-axonometric-programme.jpg"><img src="img/06-exploded-axonometric-programme.jpg" srcset="img/thumb/06-exploded-axonometric-programme.jpg 544w, img/06-exploded-axonometric-programme.jpg 1401w" sizes="(min-width: 760px) 80vh, 100vw" width="1401" height="1544"  alt="Exploded axonometric and colour-coded programme with floor plans."></a>
+      <figure class="piece" style="--r:0.9074">
+        <a class="frame" href="img/06-exploded-axonometric-programme.jpg"><img src="img/thumb/06-exploded-axonometric-programme.jpg" srcset="img/thumb/06-exploded-axonometric-programme.jpg 544w, img/06-exploded-axonometric-programme.jpg 1401w" sizes="(min-width: 760px) 327px, 145px" width="1401" height="1544"  alt="Exploded axonometric and colour-coded programme with floor plans."></a>
         <figcaption class="label"><span class="no">07</span><strong>Exploded programme</strong><span class="cap">Exploded axonometric and colour-coded programme with floor plans.</span></figcaption>
       </figure>
-      <figure class="piece wide" style="--w:1306px; --r:1.4383">
-        <a class="frame" href="img/07-migration-map.jpg"><img src="img/07-migration-map.jpg" srcset="img/thumb/07-migration-map.jpg 600w, img/07-migration-map.jpg 1306w" sizes="(min-width: 760px) 90vw, 100vw" width="1306" height="908"  alt="Map of migratory bird routes through the neighbourhood&#x27;s green spaces."></a>
+      <figure class="piece" style="--r:1.4383">
+        <a class="frame" href="img/07-migration-map.jpg"><img src="img/thumb/07-migration-map.jpg" srcset="img/thumb/07-migration-map.jpg 600w, img/07-migration-map.jpg 1306w" sizes="(min-width: 760px) 518px, 230px" width="1306" height="908"  alt="Map of migratory bird routes through the neighbourhood&#x27;s green spaces."></a>
         <figcaption class="label"><span class="no">08</span><strong>Migration map</strong><span class="cap">Map of migratory bird routes through the neighbourhood&#x27;s green spaces.</span></figcaption>
       </figure>
     </div>
-    <p class="boards"><a href="boards/bird-sanctuary-boards.pdf" target="_blank" rel="noopener">View full boards (PDF)</a></p>
   </section>
-
   <section class="room" id="close-but-cut-apart" aria-labelledby="close-but-cut-apart-title">
     <header class="room-head">
-      <p class="room-no">Room II</p>
-      <h2 id="close-but-cut-apart-title">Close but Cut Apart</h2>
-      <p class="context">Year 2 studio, autumn 2026. Mapping the Ayios Dometios neighbourhood beside the Green Line in Nicosia.</p>
+      <p class="room-no">II</p>
+      <div>
+        <h2 id="close-but-cut-apart-title">Close but Cut Apart</h2>
+        <p class="context">Year 2 studio, autumn 2026. Mapping the Ayios Dometios neighbourhood beside the Green Line in Nicosia.</p>
+      </div>
+      <a class="boards" href="boards/close-but-cut-apart-boards.pdf" target="_blank" rel="noopener">Full boards (PDF)</a>
     </header>
     <div class="walk">
-      <figure class="piece wide" style="--w:1749px; --r:1.3685">
-        <a class="frame" href="img/10-site-views-photo-cluster.jpg"><img src="img/10-site-views-photo-cluster.jpg" srcset="img/thumb/10-site-views-photo-cluster.jpg 600w, img/10-site-views-photo-cluster.jpg 1749w" sizes="(min-width: 760px) 90vw, 100vw" width="1749" height="1278" loading="lazy" alt="Black-and-white site photos, clustered roughly where each view sits around the race track."></a>
+      <figure class="piece" style="--r:1.3685">
+        <a class="frame" href="img/10-site-views-photo-cluster.jpg"><img src="img/thumb/10-site-views-photo-cluster.jpg" srcset="img/thumb/10-site-views-photo-cluster.jpg 600w, img/10-site-views-photo-cluster.jpg 1749w" sizes="(min-width: 760px) 493px, 219px" width="1749" height="1278" loading="lazy" alt="Black-and-white site photos, clustered roughly where each view sits around the race track."></a>
         <figcaption class="label"><span class="no">09</span><strong>Views around the site</strong><span class="cap">Black-and-white site photos, clustered roughly where each view sits around the race track.</span></figcaption>
       </figure>
-      <figure class="piece wide" style="--w:1800px; --r:1.6453">
-        <a class="frame" href="img/11-discontinuities-collage.jpg"><img src="img/11-discontinuities-collage.jpg" srcset="img/thumb/11-discontinuities-collage.jpg 600w, img/11-discontinuities-collage.jpg 1800w" sizes="(min-width: 760px) 90vw, 100vw" width="1800" height="1094" loading="lazy" alt="Photo-collage of the border park, where people drink coffee a few steps from the Green Line bunkers."></a>
+      <figure class="piece" style="--r:1.6453">
+        <a class="frame" href="img/11-discontinuities-collage.jpg"><img src="img/thumb/11-discontinuities-collage.jpg" srcset="img/thumb/11-discontinuities-collage.jpg 600w, img/11-discontinuities-collage.jpg 1800w" sizes="(min-width: 760px) 592px, 263px" width="1800" height="1094" loading="lazy" alt="Photo-collage of the border park, where people drink coffee a few steps from the Green Line bunkers."></a>
         <figcaption class="label"><span class="no">10</span><strong>Discontinuities and tensions</strong><span class="cap">Photo-collage of the border park, where people drink coffee a few steps from the Green Line bunkers.</span></figcaption>
       </figure>
-      <figure class="piece wide" style="--w:1800px; --r:1.4516">
-        <a class="frame" href="img/12-vegetation-photo-map.jpg"><img src="img/12-vegetation-photo-map.jpg" srcset="img/thumb/12-vegetation-photo-map.jpg 600w, img/12-vegetation-photo-map.jpg 1800w" sizes="(min-width: 760px) 90vw, 100vw" width="1800" height="1240" loading="lazy" alt="Site photos unrolled around the race track and out to the border, keyed A to S."></a>
+      <figure class="piece" style="--r:1.4516">
+        <a class="frame" href="img/12-vegetation-photo-map.jpg"><img src="img/thumb/12-vegetation-photo-map.jpg" srcset="img/thumb/12-vegetation-photo-map.jpg 600w, img/12-vegetation-photo-map.jpg 1800w" sizes="(min-width: 760px) 523px, 232px" width="1800" height="1240" loading="lazy" alt="Site photos unrolled around the race track and out to the border, keyed A to S."></a>
         <figcaption class="label"><span class="no">11</span><strong>Vegetation around the track</strong><span class="cap">Site photos unrolled around the race track and out to the border, keyed A to S.</span></figcaption>
       </figure>
-      <figure class="piece wide" style="--w:1800px; --r:1.4331">
-        <a class="frame" href="img/13-where-the-walk-breaks.jpg"><img src="img/13-where-the-walk-breaks.jpg" srcset="img/thumb/13-where-the-walk-breaks.jpg 600w, img/13-where-the-walk-breaks.jpg 1800w" sizes="(min-width: 760px) 90vw, 100vw" width="1800" height="1256" loading="lazy" alt="Walking route between everyday places, broken wherever a road has no crosswalk."></a>
+      <figure class="piece" style="--r:1.4331">
+        <a class="frame" href="img/13-where-the-walk-breaks.jpg"><img src="img/thumb/13-where-the-walk-breaks.jpg" srcset="img/thumb/13-where-the-walk-breaks.jpg 600w, img/13-where-the-walk-breaks.jpg 1800w" sizes="(min-width: 760px) 516px, 229px" width="1800" height="1256" loading="lazy" alt="Walking route between everyday places, broken wherever a road has no crosswalk."></a>
         <figcaption class="label"><span class="no">12</span><strong>Where the walk breaks</strong><span class="cap">Walking route between everyday places, broken wherever a road has no crosswalk.</span></figcaption>
       </figure>
-      <figure class="piece wide" style="--w:1033px; --r:1.3592">
-        <a class="frame" href="img/14-crosswalk-photo-edit.jpg"><img src="img/14-crosswalk-photo-edit.jpg" srcset="img/thumb/14-crosswalk-photo-edit.jpg 600w, img/14-crosswalk-photo-edit.jpg 1033w" sizes="(min-width: 760px) 90vw, 100vw" width="1033" height="760" loading="lazy" alt="Photo edit: the road to the market and park, with the crossing that has no crosswalk picked out in colour."></a>
+      <figure class="piece" style="--r:1.3592">
+        <a class="frame" href="img/14-crosswalk-photo-edit.jpg"><img src="img/thumb/14-crosswalk-photo-edit.jpg" srcset="img/thumb/14-crosswalk-photo-edit.jpg 600w, img/14-crosswalk-photo-edit.jpg 1033w" sizes="(min-width: 760px) 489px, 217px" width="1033" height="760" loading="lazy" alt="Photo edit: the road to the market and park, with the crossing that has no crosswalk picked out in colour."></a>
         <figcaption class="label"><span class="no">13</span><strong>Crossing to the market</strong><span class="cap">Photo edit: the road to the market and park, with the crossing that has no crosswalk picked out in colour.</span></figcaption>
       </figure>
     </div>
-    <p class="boards"><a href="boards/close-but-cut-apart-boards.pdf" target="_blank" rel="noopener">View full boards (PDF)</a></p>
   </section>
-
   <section class="room" id="old-and-young" aria-labelledby="old-and-young-title">
     <header class="room-head">
-      <p class="room-no">Room III</p>
-      <h2 id="old-and-young-title">Old + Young, Shared Ground</h2>
-      <p class="context">Year 2 studio, autumn 2026. How seniors and teenagers share the same streets and parks.</p>
+      <p class="room-no">III</p>
+      <div>
+        <h2 id="old-and-young-title">Old + Young, Shared Ground</h2>
+        <p class="context">Year 2 studio, autumn 2026. How seniors and teenagers share the same streets and parks.</p>
+      </div>
+      <a class="boards" href="boards/old-and-young-boards.pdf" target="_blank" rel="noopener">Full boards (PDF)</a>
     </header>
     <div class="walk">
-      <figure class="piece tall" style="--w:1379px; --r:0.9523">
-        <a class="frame" href="img/08-landscape-sections.jpg"><img src="img/08-landscape-sections.jpg" srcset="img/thumb/08-landscape-sections.jpg 571w, img/08-landscape-sections.jpg 1379w" sizes="(min-width: 760px) 80vh, 100vw" width="1379" height="1448" loading="lazy" alt="Sections along the track pathway and the park by the market, with layered trees and figures."></a>
+      <figure class="piece" style="--r:0.9523">
+        <a class="frame" href="img/08-landscape-sections.jpg"><img src="img/thumb/08-landscape-sections.jpg" srcset="img/thumb/08-landscape-sections.jpg 571w, img/08-landscape-sections.jpg 1379w" sizes="(min-width: 760px) 343px, 152px" width="1379" height="1448" loading="lazy" alt="Sections along the track pathway and the park by the market, with layered trees and figures."></a>
         <figcaption class="label"><span class="no">14</span><strong>Landscape sections</strong><span class="cap">Sections along the track pathway and the park by the market, with layered trees and figures.</span></figcaption>
       </figure>
-      <figure class="piece tall" style="--w:1591px; --r:0.8839">
-        <a class="frame" href="img/08b-stables-entrance-axo.jpg"><img src="img/08b-stables-entrance-axo.jpg" srcset="img/thumb/08b-stables-entrance-axo.jpg 530w, img/08b-stables-entrance-axo.jpg 1591w" sizes="(min-width: 760px) 80vh, 100vw" width="1591" height="1800" loading="lazy" alt="Axonometric of the entrance to the stables area, with planting, seating, figures and the cycle path."></a>
+      <figure class="piece" style="--r:0.8839">
+        <a class="frame" href="img/08b-stables-entrance-axo.jpg"><img src="img/thumb/08b-stables-entrance-axo.jpg" srcset="img/thumb/08b-stables-entrance-axo.jpg 530w, img/08b-stables-entrance-axo.jpg 1591w" sizes="(min-width: 760px) 318px, 141px" width="1591" height="1800" loading="lazy" alt="Axonometric of the entrance to the stables area, with planting, seating, figures and the cycle path."></a>
         <figcaption class="label"><span class="no">15</span><strong>Stables entrance</strong><span class="cap">Axonometric of the entrance to the stables area, with planting, seating, figures and the cycle path.</span></figcaption>
       </figure>
-      <figure class="piece tall" style="--w:1185px; --r:0.6583">
-        <a class="frame" href="img/09-close-up-storyboard.jpg"><img src="img/09-close-up-storyboard.jpg" srcset="img/thumb/09-close-up-storyboard.jpg 395w, img/09-close-up-storyboard.jpg 1185w" sizes="(min-width: 760px) 80vh, 100vw" width="1185" height="1800" loading="lazy" alt="Storyboard of a day, pairing a description, a colour diagram, and a photo for each moment."></a>
+      <figure class="piece" style="--r:0.6583">
+        <a class="frame" href="img/09-close-up-storyboard.jpg"><img src="img/thumb/09-close-up-storyboard.jpg" srcset="img/thumb/09-close-up-storyboard.jpg 395w, img/09-close-up-storyboard.jpg 1185w" sizes="(min-width: 760px) 237px, 105px" width="1185" height="1800" loading="lazy" alt="Storyboard of a day, pairing a description, a colour diagram, and a photo for each moment."></a>
         <figcaption class="label"><span class="no">16</span><strong>The close-up: senior citizen</strong><span class="cap">Storyboard of a day, pairing a description, a colour diagram, and a photo for each moment.</span></figcaption>
       </figure>
     </div>
-    <p class="boards"><a href="boards/old-and-young-boards.pdf" target="_blank" rel="noopener">View full boards (PDF)</a></p>
   </section>
 
 </main>
 
-<footer class="about" id="about">
-  <h2>About</h2>
-  <p>I'm a second-year architecture student at the University of Nicosia, Cyprus, with a hands-on background in composite fabrication, woodworking, and manufacturing. I work in Photoshop, InDesign, Illustrator, Affinity, Fusion 360, Rhino, and AutoCAD, and prepare laser-cut and CNC files. Native English speaker. Available for remote contract work, 20–40 hours a week.</p>
-  <div class="buttons" id="contact">
-    <a class="btn btn-primary" href="mailto:olssontaven@gmail.com">olssontaven@gmail.com</a>
-    <a class="btn" href="https://www.linkedin.com/in/taven-olsson-4582b1308/" target="_blank" rel="noopener">LinkedIn</a>
-  </div>
-  <p class="small">© 2026 Taven Olsson</p>
+<footer class="site-footer">
+  <span>© 2026 Taven Olsson</span>
+  <a href="mailto:olssontaven@gmail.com">olssontaven@gmail.com</a>
 </footer>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
@@ -154,6 +156,6 @@
   <button class="lb-next" type="button" aria-label="Next image">›</button>
 </div>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>

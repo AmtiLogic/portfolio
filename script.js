@@ -1,3 +1,59 @@
+// Justified rows: fill each row with pieces until it reaches the container width,
+// then scale that row so it fits exactly. Every image keeps its own ratio.
+(function () {
+  const walks = document.querySelectorAll(".walk");
+
+  function layout(walk) {
+    const style = getComputedStyle(walk);
+    const W = walk.clientWidth;
+    const H = parseFloat(style.getPropertyValue("--row")) || 340;
+    const gap = parseFloat(style.columnGap) || 0;
+    const pieces = Array.from(walk.querySelectorAll(".piece"));
+
+    function setRow(row, h) {
+      row.forEach(function (p) {
+        p.style.width = (p._r * h) + "px";
+      });
+    }
+    function fit(row) {
+      const sum = row.reduce(function (s, p) { return s + p._r; }, 0);
+      // Shave a pixel so sub-pixel rounding never pushes the last tile onto a new line.
+      return (W - 1 - gap * (row.length - 1)) / sum;
+    }
+
+    let row = [];
+    pieces.forEach(function (p) {
+      p._r = parseFloat(p.style.getPropertyValue("--r"));
+      row.push(p);
+      const sum = row.reduce(function (s, q) { return s + q._r; }, 0);
+      const width = sum * H + gap * (row.length - 1);
+      if (width < W) return;
+      // Row is full: keep the last piece if that lands closer to the target height.
+      const without = (sum - p._r) * H + gap * (row.length - 2);
+      if (row.length > 1 && W - without < width - W) {
+        row.pop();
+        setRow(row, fit(row));
+        row = [p];
+      } else {
+        setRow(row, fit(row));
+        row = [];
+      }
+    });
+    // A short last row keeps the normal height instead of stretching.
+    if (row.length) setRow(row, Math.min(H, fit(row)));
+    walk.classList.add("justified");
+  }
+
+  function all() { walks.forEach(layout); }
+  all();
+  if ("ResizeObserver" in window) {
+    const ro = new ResizeObserver(function () { all(); });
+    walks.forEach(function (w) { ro.observe(w); });
+  } else {
+    window.addEventListener("resize", all);
+  }
+})();
+
 // Fade each piece in as it scrolls into view.
 (function () {
   const pieces = document.querySelectorAll(".piece");
