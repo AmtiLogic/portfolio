@@ -1,3 +1,19 @@
+// Fade each piece in as it scrolls into view.
+(function () {
+  const pieces = document.querySelectorAll(".piece");
+  if (!("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("js");
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  pieces.forEach(function (p) { io.observe(p); });
+})();
+
 // Lightbox: click an image to view it full-screen; arrows/swipe move within its project.
 (function () {
   const box = document.getElementById("lightbox");
@@ -15,13 +31,11 @@
 
   function readItem(fig) {
     const link = fig.querySelector("a");
-    const cap = fig.querySelector("figcaption");
-    const strong = cap.querySelector("strong");
     return {
       src: link.getAttribute("href"),
       alt: fig.querySelector("img").alt,
-      title: strong.textContent,
-      text: cap.textContent.slice(strong.textContent.length).trim(),
+      title: fig.querySelector(".label strong").textContent,
+      text: fig.querySelector(".label .cap").textContent,
     };
   }
 
@@ -45,8 +59,8 @@
   }
 
   function open(fig) {
-    const grid = fig.closest(".grid");
-    const figs = Array.from(grid.querySelectorAll(".item"));
+    const walk = fig.closest(".walk");
+    const figs = Array.from(walk.querySelectorAll(".piece"));
     items = figs.map(readItem);
     opener = fig.querySelector("a");
     box.hidden = false;
@@ -67,10 +81,10 @@
     if (n >= 0 && n < items.length) show(n);
   }
 
-  document.querySelectorAll(".item a").forEach(function (a) {
+  document.querySelectorAll(".piece .frame").forEach(function (a) {
     a.addEventListener("click", function (e) {
       e.preventDefault();
-      open(a.closest(".item"));
+      open(a.closest(".piece"));
     });
   });
 
